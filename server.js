@@ -9,13 +9,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3000;
-const BASE_URL = process.env.BASE_URL; https://your-app.up.railway.app
+const BASE_URL = process.env.BASE_URL;
 const APP_PASSWORD = process.env.APP_PASSWORD || 'changeme';
 
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
-const FROM = process.env.TWILIO_PHONE_NUMBER; +18473077206
-const GHL_API_KEY = process.env.GHL_API_KEY; pit-c6a49a2e-1431-47c6-8f7a-0fd364a54d4c
-const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;cHpOTU8Ng0PYJ95VJKSw
+const FROM = process.env.TWILIO_PHONE_NUMBER;
+const GHL_API_KEY = process.env.GHL_API_KEY;
+const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
 
 const activeSessions = new Map();
 
