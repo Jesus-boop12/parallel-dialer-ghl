@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3000;
 const BASE_URL = process.env.BASE_URL; https://your-app.up.railway.app
-const APP_PASSWORD = process.env.APP_PASSWORD || 'changeme';Guadalup3
+const APP_PASSWORD = process.env.APP_PASSWORD || 'changeme';
 
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 const FROM = process.env.TWILIO_PHONE_NUMBER; +18473077206
