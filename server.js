@@ -31,17 +31,16 @@ function normalizePhone(phone) {
 if (!phone) return '';
 const digits = String(phone).replace(/\D/g, '');
 if (digits.length === 11 && digits.startsWith('1')) return +`${digits}`;
-if (String(phone).startsWith('+')) return String(phone);
-return +${digits};
-}
+if (digits.length === 10) return +`1${digits}`;
+return +`${digits}`;
 
 async function addNoteToHighLevel(contactId, body) {
 if (!contactId || !GHL_API_KEY) return;
 try {
-await fetch(https://services.leadconnectorhq.com/contacts/${contactId}/notes, {
+await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/notes`, {
 method: 'POST',
 headers: {
-Authorization: Bearer ${GHL_API_KEY},
+Authorization: `Bearer ${GHL_API_KEY}`,
 Version: '2021-07-28',
 'Content-Type': 'application/json'
 },
@@ -112,5 +111,4 @@ res.type('text/xml').send(twiml.toString());
 });
 
 app.listen(PORT, () => {
-console.log(Server running on ${PORT});
-});
+console.log(`Server running on ${PORT}`);
