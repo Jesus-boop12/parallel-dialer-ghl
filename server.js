@@ -21,7 +21,7 @@ const activeSessions = new Map();
 
 function requireAuth(req, res, next) {
 const auth = req.headers.authorization || '';
-if (auth !== Bearer ${APP_PASSWORD}) {
+if (auth !== `Bearer ${APP_PASSWORD}`) {
 return res.status(401).json({ error: 'Unauthorized' });
 }
 next();
