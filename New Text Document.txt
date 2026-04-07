@@ -1,5 +1,3 @@
-// parallel_dialer_gohighlevel_starter.js
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const twilio = require('twilio');
