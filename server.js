@@ -252,11 +252,9 @@ app.post('/twiml', (req, res) => {
     twiml.pause({ length: 1 });
   }
 
-  twiml.say(\`Connected lead: \${leadName || 'Unknown Lead'}. Press 1 to claim this call.\`);
-  twiml.gather({
+  twiml.say(`Connected lead: ${leadName || 'Unknown Lead'}. Press 1 to claim this call.`);  twiml.gather({
     numDigits: 1,
-    action: \`/claim?sessionId=\${encodeURIComponent(sessionId)}&to=\${encodeURIComponent(to || '')}\`,
-    method: 'POST',
+    action: `/claim?sessionId=${encodeURIComponent(sessionId)}&to=${encodeURIComponent(to || '')}`,    method: 'POST',
     timeout: 10
   });
 
@@ -296,5 +294,4 @@ app.get('/health', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(\`Server running on \${PORT}\`);
-});
+  console.log(`Server running on ${PORT}`);
